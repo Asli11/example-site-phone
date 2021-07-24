@@ -128,27 +128,28 @@ const plus = document.querySelectorAll(".footer-nav div p");
 plus.forEach((plus) =>
 	plus.addEventListener("click", (e) => {
 		/* get menu */
+		var path = e.path || (e.composedPath && e.composedPath());
 
-		if (!e.path[0].children[0].classList.contains("rotate")) {
-			e.path[1].children[1].style.position = "relative";
-			e.path[1].children[1].style.transform = "translateY(0)";
-			e.path[1].children[1].style.visibility = "visible";
-			e.path[1].children[1].style.zIndex = "10";
-			e.path[1].children[1].style.transition = " 0.4s ease";
-			e.path[1].children[1].style.pointerEvents = "unset";
+		if (!path[0].children[0].classList.contains("rotate")) {
+			path[1].children[1].style.position = "relative";
+			path[1].children[1].style.transform = "translateY(0)";
+			path[1].children[1].style.visibility = "visible";
+			path[1].children[1].style.zIndex = "10";
+			path[1].children[1].style.transition = " 0.4s ease";
+			path[1].children[1].style.pointerEvents = "unset";
 
 			/* icon rotate */
-			e.path[0].children[0].classList.add("rotate");
+			path[0].children[0].classList.add("rotate");
 		} else {
-			e.path[1].children[1].style.position = "absolute";
+			path[1].children[1].style.position = "absolute";
 
-			e.path[1].children[1].style.transform = "translateY(-110%)";
-			e.path[1].children[1].style.visibility = "hidden";
-			e.path[1].children[1].style.zIndex = "-300";
-			e.path[1].children[1].style.transition = "none";
-			e.path[1].children[1].style.pointerEvents = "none";
+			path[1].children[1].style.transform = "translateY(-110%)";
+			path[1].children[1].style.visibility = "hidden";
+			path[1].children[1].style.zIndex = "-300";
+			path[1].children[1].style.transition = "none";
+			path[1].children[1].style.pointerEvents = "none";
 
-			e.path[0].children[0].classList.remove("rotate");
+			path[0].children[0].classList.remove("rotate");
 		}
 	})
 );

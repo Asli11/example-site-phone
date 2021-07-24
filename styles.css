@@ -299,13 +299,19 @@ section,
 	padding: 20px 0;
 }
 
-.title-wrap img {
+.title-img {
 	padding: 30px 0;
-	margin: auto;
-	max-width: 300px;
+	min-width: 290px;
+	max-width: 400px;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	background-size: contain;
+	background-image: url(./image/cellular-2140978_640.png);
 }
 .img-cont {
 	width: 100%;
+	height: 50%;
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -635,17 +641,12 @@ section,
 
 	border-right: darkgray solid 0.5px;
 }
-@media screen and (max-width: 400) {
-	.title-wrap img {
-		width: 200px;
-	}
-}
 
 @media screen and (min-width: 740px) {
-	.title-wrap img {
-		max-width: 450px;
-		margin: auto;
-		content: url(image/Group\ 2.png);
+	.title-img {
+		min-width: 600px;
+
+		background-image: url(image/Group\ 2.png);
 	}
 
 	.image-slider-wrapper {
@@ -713,10 +714,6 @@ section,
 } */
 
 @media screen and (min-width: 768px) {
-	.title-wrap img {
-		max-width: 600px;
-	}
-
 	.footer-nav {
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	}
@@ -850,11 +847,11 @@ section,
 	.comp img {
 		width: 120px;
 	}
+	.title-img {
+		min-width: 700px;
+	}
 }
 @media screen and (max-width: 410px) {
-	.title-wrap img {
-		width: 100%;
-	}
 	.colors {
 		height: 85px;
 	}
@@ -904,10 +901,14 @@ section,
 		text-align: center;
 	}
 }
-@media screen and (max-width: 200px) {
+@media screen and (max-width: 320px) {
 	.slogan {
 		font-size: 2rem;
 		word-break: break-all;
+	}
+
+	.title-img {
+		min-width: 95%;
 	}
 }
 @media screen and (max-height: 580px) {
