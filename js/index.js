@@ -94,6 +94,7 @@ menuIcon.addEventListener("click", () => {
 		document.body.classList.add("body-scroll");
 		root.classList.add("scroll");
 		root.classList.add("scroll-2");
+		menu.style.transition = " 0.65s ease-out";
 	} else {
 		menu.style.position = "absolute";
 
@@ -115,9 +116,15 @@ window.addEventListener("resize", () => {
 function breackPoint() {
 	if (window.innerWidth > 768) {
 		menu.style.transition = "none";
+		menu.style.transform = "none";
 	}
 	if (window.innerWidth < 768) {
-		menu.style.transition = "0.65s ease-out";
+		menu.style.transition = "none";
+
+		menu.style.position = "absolute";
+		menu.style.transform = "translateY(-110%)";
+		/* 		menu.style.zIndex = "-10";
+		menu.style.opacity = "0"; */
 	}
 }
 
@@ -135,7 +142,7 @@ plus.forEach((plus) =>
 			path[1].children[1].style.transform = "translateY(0)";
 			path[1].children[1].style.visibility = "visible";
 			path[1].children[1].style.zIndex = "10";
-			path[1].children[1].style.transition = " 0.4s ease";
+			path[1].children[1].style.transition = " 0.65s ease-out";
 			path[1].children[1].style.pointerEvents = "unset";
 
 			/* icon rotate */
